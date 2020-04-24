@@ -3,8 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
-    "build:android": "npx react-native link && npx react-native bundle --platform android --dev false --entry-file index.js  --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && ./gradlew assembleDebug && cd .. && adb install -r android/app/build/outputs/apk/debug/app-debug.apk && adb shell am start -W com.appgobarber/.MainActivity",
+    "android:run": "react-native run-android",
+    "android:log": "adb logcat *:S ReactNative:V ReactNativeJS:V",
+    "android:build": "npx react-native link && npx react-native bundle --platform android --dev false --entry-file index.js  --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && ./gradlew assembleDebug && cd .. && adb install -r android/app/build/outputs/apk/debug/app-debug.apk && adb shell am start -W com.appgobarber/.MainActivity",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -14,6 +15,8 @@
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/native": "^5.1.6",
     "@react-navigation/stack": "^5.2.13",
+    "@unform/core": "^2.1.0",
+    "@unform/mobile": "^2.1.0",
     "react": "16.11.0",
     "react-native": "0.62.2",
     "react-native-gesture-handler": "^1.6.1",
@@ -21,7 +24,8 @@
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.5.0",
     "react-native-vector-icons": "^6.6.0",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
+    "yup": "^0.28.4"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -32,6 +36,7 @@
     "@types/react-native-vector-icons": "^6.4.5",
     "@types/react-test-renderer": "16.9.2",
     "@types/styled-components": "^5.1.0",
+    "@types/yup": "^0.28.0",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
     "@typescript-eslint/parser": "^2.29.0",
     "babel-jest": "^24.9.0",
