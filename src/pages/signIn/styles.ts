@@ -4,6 +4,7 @@ export const Container = styled.View`
     flex: 1;
     align-items: center;
     justify-content: center;
+    padding: 16px;
 `;
 
 export const Title = styled.Text`
@@ -11,4 +12,6 @@ export const Title = styled.Text`
     color: #F4EDE8;
     font-family: 'RobotoSlab-Medium';
     margin: 64px 0 24px;
+
+    padding: 0 30px;
 `;

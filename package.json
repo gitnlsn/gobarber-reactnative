@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "build:android": "npx react-native link && npx react-native bundle --platform android --dev false --entry-file index.js  --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && ./gradlew assembleDebug && cd .. && adb install -r android/app/build/outputs/apk/debug/app-debug.apk",
+    "build:android": "npx react-native link && npx react-native bundle --platform android --dev false --entry-file index.js  --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && cd android && ./gradlew assembleDebug && cd .. && adb install -r android/app/build/outputs/apk/debug/app-debug.apk && adb shell am start -W com.appgobarber/.MainActivity",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -20,6 +20,7 @@
     "react-native-reanimated": "^1.8.0",
     "react-native-safe-area-context": "^0.7.3",
     "react-native-screens": "^2.5.0",
+    "react-native-vector-icons": "^6.6.0",
     "styled-components": "^5.1.0"
   },
   "devDependencies": {
@@ -28,6 +29,7 @@
     "@react-native-community/eslint-config": "^1.0.0",
     "@types/jest": "^24.0.24",
     "@types/react-native": "^0.62.0",
+    "@types/react-native-vector-icons": "^6.4.5",
     "@types/react-test-renderer": "16.9.2",
     "@types/styled-components": "^5.1.0",
     "@typescript-eslint/eslint-plugin": "^2.29.0",
